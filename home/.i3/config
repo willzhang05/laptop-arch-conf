@@ -9,16 +9,17 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg
+exec --no-startup-id i3-msg 'exec /usr/bin/pulseaudio --start'
 exec ~/.i3/set_mouse.sh Synaptics #xinput --set-prop 15 289 1
-exec xss-lock -- i3lock -n -i ~/Pictures/lock.png --clock --indicator --insidecolor=#00000000 --linecolor=#00000000 &
+exec --no-startup-id xss-lock -- i3lock -n -i ~/Pictures/lock.png --clock --indicator --insidecolor=#00000000 --linecolor=#00000000 &
 #exec xautolock -locker "i3lock -n -i ~/Pictures/lock.png --clock --indicator --insidecolor=#00000000 --linecolor=#00000000" &
 #exec xautolock -locker "systemctl suspend" &
 exec redshift
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1000 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1000 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 0.75 # increase screen brightness
