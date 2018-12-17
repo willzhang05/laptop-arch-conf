@@ -1,0 +1,15 @@
+syntax on
+set number
+colors darkblue
+set smartcase
+set ignorecase
+set autoindent
+set nostartofline
+set ruler
+set confirm
+set visualbell
+set mouse=a
+set expandtab
+set sw=4
+set ts=4
+set softtabstop=4
