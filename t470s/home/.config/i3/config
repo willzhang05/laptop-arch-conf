@@ -13,7 +13,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg
 #exec --no-startup-id pulseaudio --daemonize
 #exec ~/.i3/set_mouse.sh Synaptics #xinput --set-prop 15 289 1
 #exec --no-startup-id xss-lock -- i3lock -n -i ~/Pictures/lock.png --clock --indicator --insidecolor=#00000000 --linecolor=#00000000 &
-exec --no-startup-id xss-lock -- i3lock -n --blur=7 --clock --indicator --timecolor=#ffffffff --datecolor=#2e9ef4ff --insidecolor=#00000000 --linecolor=#00000000 &
+exec --no-startup-id xss-lock -- i3lock -n --blur=8 --clock --indicator --timecolor=#bdbdbdff --datecolor=#2e9ef4ff --insidecolor=#00000000 --linecolor=#00000000 &
 #exec xautolock -locker "i3lock -n -i ~/Pictures/lock.png --clock --indicator --insidecolor=#00000000 --linecolor=#00000000" &
 #exec xautolock -locker "systemctl suspend" &
 exec redshift
@@ -34,8 +34,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym --release Print exec scrot ~/screenshots/$(date '+%Y%m%d-%H%M%S').jpg
-bindsym --release $mod+Print exec scrot -s ~/screenshots/$(date '+%Y%m%d-%H%M%S').jpg
+bindsym --release Print exec scrot ~/Pictures/screenshots/$(date '+%Y%m%d-%H%M%S').jpg
+bindsym --release $mod+Print exec scrot -s ~/Pictures/screenshots/$(date '+%Y%m%d-%H%M%S').jpg
 
 set $mod Mod4
 
@@ -154,7 +154,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+l exec "i3lock -n --blur=7 --clock --indicator --timecolor=#ffffffff --datecolor=#2e9ef4ff --insidecolor=#00000000 --linecolor=#00000000"
+bindsym Mod1+l exec "i3lock -n --blur=8 --clock --indicator --timecolor=#bdbdbdff --datecolor=#2e9ef4ff --insidecolor=#00000000 --linecolor=#00000000"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
